@@ -70,7 +70,69 @@ namespace MVC_EF_Start.Controllers
       dbContext.Quotes.Add(MyCompanyQuote1);
       dbContext.Quotes.Add(MyCompanyQuote2);
 
-      dbContext.SaveChanges();
+            Student student1 = new Student();
+            student1.Name = "Neelima";
+
+            Student student2 = new Student();
+            student2.Name = "Rameez";
+
+            Student student3 = new Student();
+            student3.Name = "Eric";
+
+
+            Course course1 = new Course();
+            course1.Name = "Distributed systems";
+
+            Course course2 = new Course();
+            course2.Name = "Leadership";
+
+            Course course3 = new Course();
+            course3.Name = "Data Mining";
+
+            Enrollment enrollment1 = new Enrollment();
+            enrollment1.course = course1;
+            enrollment1.student = student1;
+            enrollment1.grade = "A";
+
+            Enrollment enrollment2 = new Enrollment();
+            enrollment2.course = course1;
+            enrollment2.student = student2;
+            enrollment2.grade = "A";
+
+            Enrollment enrollment3 = new Enrollment();
+            enrollment3.course = course1;
+            enrollment3.student = student3;
+            enrollment3.grade = "A";
+
+            Enrollment enrollment4 = new Enrollment();
+            enrollment4.course = course2;
+            enrollment4.student = student1;
+            enrollment4.grade = "A";
+
+            Enrollment enrollment5 = new Enrollment();
+            enrollment5.course = course2;
+            enrollment5.student = student2;
+            enrollment5.grade = "A";
+
+            Enrollment enrollment6 = new Enrollment();
+            enrollment6.course = course3;
+            enrollment6.student = student1;
+            enrollment6.grade = "A";
+
+            dbContext.Students.Add(student1);
+            dbContext.Students.Add(student2);
+            dbContext.Students.Add(student3);
+            dbContext.Courses.Add(course1);
+            dbContext.Courses.Add(course2);
+            dbContext.Courses.Add(course3);
+            dbContext.Enrollments.Add(enrollment1);
+            dbContext.Enrollments.Add(enrollment2);
+            dbContext.Enrollments.Add(enrollment3);
+            dbContext.Enrollments.Add(enrollment4);
+            dbContext.Enrollments.Add(enrollment5);
+            dbContext.Enrollments.Add(enrollment6);
+
+            dbContext.SaveChanges();
       
       // READ operation
       Company CompanyRead1 = dbContext.Companies
